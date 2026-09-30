@@ -30,4 +30,12 @@ public class ExercicioFisicoService {
         return repository.findByIdAndAprovadoTrue(id)
                 .map(mapper::toResponseDTO);
     }
+    // Etapa 3
+    public ExercicioFisicoResponseDTO cadastrar(ExercicioFisicoRequestDTO dto) {
+        ExercicioFisico entidade = mapper.toEntity(dto);
+        entidade.setAprovado(false); // Regra: nasce como desaprovado
+
+        ExercicioFisico salvo = repository.save(entidade);
+        return mapper.toResponseDTO(salvo);
+    }
 }

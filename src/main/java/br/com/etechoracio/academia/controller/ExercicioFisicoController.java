@@ -30,4 +30,10 @@ public class ExercicioFisicoController {
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+    // Etapa 3
+    @PostMapping
+    public ResponseEntity<ExercicioFisicoResponseDTO> cadastrar(@RequestBody ExercicioFisicoRequestDTO dto) {
+        ExercicioFisicoResponseDTO criado = service.cadastrar(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(criado);
+    }
 }
