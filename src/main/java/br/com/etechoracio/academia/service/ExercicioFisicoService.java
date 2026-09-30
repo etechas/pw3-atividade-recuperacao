@@ -38,4 +38,18 @@ public class ExercicioFisicoService {
         ExercicioFisico salvo = repository.save(entidade);
         return mapper.toResponseDTO(salvo);
     }
+    // Etapa 4
+    public Optional<ExercicioFisicoResponseDTO> aprovar(Long id) {
+        Optional<ExercicioFisico> opt = repository.findById(id);
+        
+        if (opt.isEmpty()) {
+            return Optional.empty();
+        }
+
+        ExercicioFisico entidade = opt.get();
+        entidade.setAprovado(true);
+
+        ExercicioFisico atualizado = repository.save(entidade);
+        return Optional.of(mapper.toResponseDTO(atualizado));
+    }
 }

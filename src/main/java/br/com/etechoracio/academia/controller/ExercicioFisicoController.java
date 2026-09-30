@@ -36,4 +36,11 @@ public class ExercicioFisicoController {
         ExercicioFisicoResponseDTO criado = service.cadastrar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(criado);
     }
+    // Etapa 4
+    @PatchMapping("/{id}/aprovar")
+    public ResponseEntity<ExercicioFisicoResponseDTO> aprovar(@PathVariable Long id) {
+        return service.aprovar(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
