@@ -1,0 +1,21 @@
+{
+  "name": "fefo-pw3-atividade-recuperacao",
+  "version": "1.0.0",
+  "description": "**Disciplina:** Programação Web III (PW3)  \r **Curso:** Técnico em Desenvolvimento de Sistemas  \r **Instituição:** Etec Horácio Augusto da Silveira  \r **Tecnologias:** Java 25, Spring Boot 4, Spring Data JPA, MapStruct, Lombok, Git/GitHub, H2 Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fefocardozo/fefo-pw3-atividade-recuperacao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fefocardozo/fefo-pw3-atividade-recuperacao/issues"
+  },
+  "homepage": "https://github.com/fefocardozo/fefo-pw3-atividade-recuperacao#readme"
+}
