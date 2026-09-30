@@ -25,4 +25,9 @@ public class ExercicioFisicoService {
         List<ExercicioFisico> entidades = repository.findByAprovadoTrue();
         return mapper.toResponseDTOList(entidades);
     }
+    // Etapa 2
+    public Optional<ExercicioFisicoResponseDTO> buscarAprovadoPorId(Long id) {
+        return repository.findByIdAndAprovadoTrue(id)
+                .map(mapper::toResponseDTO);
+    }
 }

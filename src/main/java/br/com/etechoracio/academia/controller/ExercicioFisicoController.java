@@ -23,4 +23,11 @@ public class ExercicioFisicoController {
         List<ExercicioFisicoResponseDTO> lista = service.listarAprovados();
         return ResponseEntity.ok(lista);
     }
+    // Etapa 2
+    @GetMapping("/{id}")
+    public ResponseEntity<ExercicioFisicoResponseDTO> buscarPorId(@PathVariable Long id) {
+        return service.buscarAprovadoPorId(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
